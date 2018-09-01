@@ -32,3 +32,17 @@ def post_question():
             return jsonify({"message": "New question successfully posted",
                             "Question": all_questions[question]["question"]
                             }), 201
+
+
+@app.route("/api/v1/questions", methods=["GET"])
+# View all questions
+def get_all_questions():
+    if len(all_questions) > 0:
+        return jsonify({
+            "message": "Successfully viewed questions",
+            "available questions": [
+                question.__dict__ for question in all_questions
+            ]
+        }), 200
+    else:
+        return jsonify({"message": "No Question has been posted yet"}), 400

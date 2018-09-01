@@ -85,3 +85,12 @@ def post_answer(question_id):
         if any(xy["question_id"] == _id for xy in all_answers):
             return jsonify({"message": "Answer already exists"}), 409
 
+    for question in range(len(all_questions)):
+        if (all_questions[question]["question_id"]) == int(_id):
+            ans_id = len(all_answers) + 1
+            new_answer = Answer(ans_id, ans, _id)
+            all_answers.append(new_answer)
+            return jsonify({
+                "message": "Answer successfully posted to question",
+                "Question answered": [all_questions[question]["question"]]}), 201
+    return jsonify({"message": "No such question is available", }), 204

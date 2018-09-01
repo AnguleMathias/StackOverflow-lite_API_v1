@@ -32,3 +32,8 @@ class TestAnswer(unittest.TestCase):
         reply = json.loads(response2.data)
         self.assertEquals(reply["message"], "Input has to be at least 10 characters long")
         self.assertEquals(response2.status_code, 400)
+
+    def test_answer_with_wrong_question_id(self):
+        response = self.app.post("/api/v1/questions",
+                                 content_type='application/json',
+                                 data=json.dumps(dict(question="This is my question 1"), ))

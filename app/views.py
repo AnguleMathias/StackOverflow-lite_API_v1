@@ -64,3 +64,19 @@ def get_a_question(question_id):
     return jsonify({
         "message": "No such question is available",
     }), 204
+
+
+@app.route("api/v1/questions/<question_id>/answer", methods=["POST"])
+# POST answer to a specific question
+def post_answer(question_id):
+    _id = question_id.strip()
+    validation = validate.validate_entered_id(_id)
+    if validation:
+        return validation
+
+    data = request.get_json()
+    answer = data.get("answer")
+    ans = answer.strip()
+    validation2 = validate.validate_input(ans)
+    if validation2:
+        return validation2

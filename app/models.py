@@ -16,7 +16,7 @@ class Question:
 
 class Answer:
     """
-    Model class for answers
+    Model class for answers to questions
     """
     def __init__(self, answer_id, answer, question_id):
         self.answer_id = answer_id

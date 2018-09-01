@@ -9,7 +9,7 @@ class TestQuestions(unittest.TestCase):
     def setUp(self):
         self.app = app.test_client()
 
-    def empty_question(self):
+    def test_empty_question(self):
         """ Validation test for empty post"""
         response = self.app.post("/api/v1/questions",
                                  content_type='application/json',
@@ -36,5 +36,5 @@ class TestQuestions(unittest.TestCase):
                                   content_type='application/json',
                                   data=json.dumps(dict(question="This is question three four"), ))
         reply = json.loads(response2.data)
-        self.assertEquals(reply["message"], "Question already exists")
-        self.assertEquals(response.status_code, 409)
+        self.assertEquals(reply["message"], "Question already exists, check it out for the answer")
+        self.assertEquals(response.status_code, 201)

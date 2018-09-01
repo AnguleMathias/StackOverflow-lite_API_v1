@@ -8,7 +8,7 @@ class FieldValidation:
         try:
             _id = int(id)
         except ValueError:
-            return jsonify({"message": "Id should be an interger"}), 400
+            return jsonify({"message": "Id should be an integer"}), 400
 
     def validate_input(self, input):
 

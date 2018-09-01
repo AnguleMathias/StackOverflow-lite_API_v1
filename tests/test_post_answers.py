@@ -18,3 +18,5 @@ class TestAnswer(unittest.TestCase):
                                   content_type='application/json',
                                   data=json.dumps(dict(answer="This is my answer 1"), ))
         reply = json.loads(response2.data)
+        self.assertEquals(reply["message"], "Answer successfully posted to question")
+        self.assertEquals(response2.status_code, 201)

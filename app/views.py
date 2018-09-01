@@ -81,3 +81,7 @@ def post_answer(question_id):
     if validation2:
         return validation2
 
+    if any(dy["answer"] == ans for dy in all_answers):
+        if any(xy["question_id"] == _id for xy in all_answers):
+            return jsonify({"message": "Answer already exists"}), 409
+

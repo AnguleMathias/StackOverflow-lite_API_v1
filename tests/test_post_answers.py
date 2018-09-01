@@ -1,8 +1,6 @@
 import unittest
+from flask import json
 from run import app
-from flask import jsonify, json
-from app.models import Answer
-from app import views
 
 
 class TestAnswer(unittest.TestCase):
@@ -33,7 +31,7 @@ class TestAnswer(unittest.TestCase):
         self.assertEquals(reply["message"], "Input has to be at least 10 characters long")
         self.assertEquals(response2.status_code, 400)
 
-    def test_answer_with_wrong_question_id(self):
+    def test_wrong_question_id(self):
         response = self.app.post("/api/v1/questions/a/answer",
                                  content_type='application/json',
                                  data=json.dumps(dict(answer="This is my answer 1"), ))

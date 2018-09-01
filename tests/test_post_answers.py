@@ -13,8 +13,8 @@ class TestAnswer(unittest.TestCase):
                                  content_type='application/json',
                                  data=json.dumps(dict(answer="This is my answer 1"), ))
         reply = json.loads(response.data)
-        self.assertEquals(reply["message"], "Answer successfully posted to question")
-        self.assertEquals(response.status_code, 201)
+        self.assertEquals(reply["message"], "Answer already exists")
+        self.assertEquals(response.status_code, 409)
 
     def test_empty_answer_post(self):
         """ Test for posting an empty answer post"""

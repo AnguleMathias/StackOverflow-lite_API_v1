@@ -1,6 +1,6 @@
 from app import app
 from flask import request, json, jsonify
-from app.models import Question
+from app.models import Question, Answer
 from app.validate import FieldValidation
 
 all_questions = []
@@ -80,3 +80,4 @@ def post_answer(question_id):
     validation2 = validate.validate_input(ans)
     if validation2:
         return validation2
+

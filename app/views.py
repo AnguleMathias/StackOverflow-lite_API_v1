@@ -46,3 +46,21 @@ def get_all_questions():
         }), 200
     else:
         return jsonify({"message": "No Question has been posted yet"}), 400
+
+
+@app.route("/api/v1/questions/<question_id>", methods=["GET"])
+# GET a specific question
+def get_a_question(question_id):
+    _id = question_id.strip()
+    validation = validate.validate_entered_id(_id)
+    if validation:
+        return validation
+    for question in range(len(all_questions)):
+        if (all_questions[question]["question_id"]) == int(_id):
+            return jsonify({
+                "Question":
+                    all_questions[question]["question"]
+            }), 200
+    return jsonify({
+        "message": "No such question is available",
+    }), 204

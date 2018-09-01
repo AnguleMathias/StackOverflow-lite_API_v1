@@ -1,6 +1,6 @@
 from app import app
 from flask import request, json, jsonify
-from app.models import Question
+from app.models import Question, Answer
 from app.validate import FieldValidation
 
 all_questions = []

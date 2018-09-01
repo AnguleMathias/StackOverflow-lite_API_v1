@@ -66,7 +66,7 @@ def get_a_question(question_id):
     }), 204
 
 
-@app.route("api/v1/questions/<question_id>/answer", methods=["POST"])
+@app.route("/api/v1/questions/<question_id>/answer", methods=["POST"])
 # POST answer to a specific question
 def post_answer(question_id):
     _id = question_id.strip()

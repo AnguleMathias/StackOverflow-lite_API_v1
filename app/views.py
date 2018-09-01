@@ -49,7 +49,7 @@ def get_all_questions():
 
 
 @app.route("/api/v1/questions/<question_id>", methods=["GET"])
-# GET a specific question
+# GET a specific question by id
 def get_a_question(question_id):
     _id = question_id.strip()
     validation = validate.validate_entered_id(_id)

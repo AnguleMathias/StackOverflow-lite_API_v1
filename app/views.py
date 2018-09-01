@@ -1,5 +1,5 @@
+from flask import request, jsonify
 from app import app
-from flask import request, json, jsonify
 from app.models import Question, Answer
 from app.validate import FieldValidation
 
@@ -30,8 +30,7 @@ def post_question():
     for question in range(len(all_questions)):
         if (all_questions[question]["question_id"]) == int(question_id):
             return jsonify({"message": "New question successfully posted",
-                            "Question": all_questions[question]["question"]
-                            }), 201
+                            "Question": all_questions[question]["question"]}), 201
 
 
 @app.route("/api/v1/questions", methods=["GET"])
@@ -44,8 +43,7 @@ def get_all_questions():
                 question.__dict__ for question in all_questions
             ]
         }), 200
-    else:
-        return jsonify({"message": "No Question has been posted yet"}), 400
+    return jsonify({"message": "No Question has been posted yet"}), 400
 
 
 @app.route("/api/v1/questions/<question_id>", methods=["GET"])

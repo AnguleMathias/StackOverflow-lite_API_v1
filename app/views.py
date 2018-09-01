@@ -1,6 +1,6 @@
 from app import app
 from flask import request, json, jsonify
-from app.models import Question
+from app.models import Question, Answer
 from app.validate import FieldValidation
 
 all_questions = []
@@ -64,3 +64,33 @@ def get_a_question(question_id):
     return jsonify({
         "message": "No such question is available",
     }), 204
+
+
+@app.route("/api/v1/questions/<question_id>/answer", methods=["POST"])
+# POST answer to a specific question
+def post_answer(question_id):
+    _id = question_id.strip()
+    validation = validate.validate_entered_id(_id)
+    if validation:
+        return validation
+
+    data = request.get_json()
+    answer = data.get("answer")
+    ans = answer.strip()
+    validation2 = validate.validate_input(ans)
+    if validation2:
+        return validation2
+
+    if any(dy["answer"] == ans for dy in all_answers):
+        if any(xy["question_id"] == _id for xy in all_answers):
+            return jsonify({"message": "Answer already exists"}), 409
+
+    for question in range(len(all_questions)):
+        if (all_questions[question]["question_id"]) == int(_id):
+            ans_id = len(all_answers) + 1
+            new_answer = Answer(ans_id, ans, _id)
+            all_answers.append(new_answer)
+            return jsonify({
+                "message": "Answer successfully posted to question",
+                "Question answered": [all_questions[question]["question"]]}), 201
+    return jsonify({"message": "No such question is available", }), 204

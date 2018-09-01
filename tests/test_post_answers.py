@@ -34,6 +34,9 @@ class TestAnswer(unittest.TestCase):
         self.assertEquals(response2.status_code, 400)
 
     def test_answer_with_wrong_question_id(self):
-        response = self.app.post("/api/v1/questions",
+        response = self.app.post("/api/v1/questions/a/answer",
                                  content_type='application/json',
-                                 data=json.dumps(dict(question="This is my question 1"), ))
+                                 data=json.dumps(dict(answer="This is my answer 1"), ))
+        reply = json.loads(response.data)
+        self.assertEquals(reply["message"], "Id should be an integer")
+        self.assertEquals(response.status_code, 400)

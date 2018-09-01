@@ -18,7 +18,8 @@ class TestQuestions(unittest.TestCase):
         self.assertEquals(reply["message"], "No input given")
         self.assertEquals(response.status_code, 400)
 
-    def test_short_question(self):
+
+    def test_adding_question_with_short_post(self):
         """ Validation test for a short question"""
         response = self.app.post("/api/v1/questions",
                                  content_type='application/json',
@@ -27,7 +28,7 @@ class TestQuestions(unittest.TestCase):
         self.assertEquals(reply["message"], "Input has to be at least 10 characters long")
         self.assertEquals(response.status_code, 400)
 
-    def test_existing_question(self):
+    def test_adding_existing_question(self):
         """ Test for posting question successfully """
         response = self.app.post("/api/v1/questions",
                                  content_type='application/json',

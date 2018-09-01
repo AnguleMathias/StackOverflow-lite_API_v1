@@ -13,7 +13,7 @@ class FieldValidation:
     def validate_input(self, input):
 
         if not input:
-            return jsonify({"message": "No input was given"}), 400
+            return jsonify({"message": "No input given"}), 400
         if len(input) < 10:
             return jsonify({"message": "Input has to be at least 10 characters long"}), 400
 

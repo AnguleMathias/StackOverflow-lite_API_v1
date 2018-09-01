@@ -1,8 +1,6 @@
 import unittest
+from flask import json
 from run import app
-from app import views
-from app.models import Question
-from flask import jsonify, json
 
 
 class TestQuestions(unittest.TestCase):
@@ -17,7 +15,6 @@ class TestQuestions(unittest.TestCase):
         reply = json.loads(response.data)
         self.assertEquals(reply["message"], "No input given")
         self.assertEquals(response.status_code, 400)
-
 
     def test_adding_question_with_short_post(self):
         """ Validation test for a short question"""

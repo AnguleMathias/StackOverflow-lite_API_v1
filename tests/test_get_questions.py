@@ -1,8 +1,6 @@
 import unittest
+from flask import json
 from run import app
-from flask import json, jsonify
-from app.models import Question
-from app import views
 
 
 class TestViewingQuestions(unittest.TestCase):

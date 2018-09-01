@@ -18,6 +18,7 @@ class TestQuestions(unittest.TestCase):
         self.assertEquals(reply["message"], "No input given")
         self.assertEquals(response.status_code, 400)
 
+
     def test_adding_question_with_short_post(self):
         """ Validation test for a short question"""
         response = self.app.post("/api/v1/questions",

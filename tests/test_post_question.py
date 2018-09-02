@@ -13,8 +13,8 @@ class TestQuestions(unittest.TestCase):
                                  content_type='application/json',
                                  data=json.dumps(dict(question=" "), ))
         reply = json.loads(response.data)
-        self.assertEquals(reply["message"], "No input given")
-        self.assertEquals(response.status_code, 400)
+        self.assertEqual(reply["message"], "No input given")
+        self.assertEqual(response.status_code, 400)
 
     def test_adding_question_with_short_post(self):
         """ Validation test for a short question"""
@@ -22,8 +22,8 @@ class TestQuestions(unittest.TestCase):
                                  content_type='application/json',
                                  data=json.dumps(dict(question="What is?"), ))
         reply = json.loads(response.data)
-        self.assertEquals(reply["message"], "Input has to be at least 10 characters long")
-        self.assertEquals(response.status_code, 400)
+        self.assertEqual(reply["message"], "Input has to be at least 10 characters long")
+        self.assertEqual(response.status_code, 400)
 
     def test_adding_existing_question(self):
         """ Test for posting question successfully """
@@ -34,5 +34,5 @@ class TestQuestions(unittest.TestCase):
                                   content_type='application/json',
                                   data=json.dumps(dict(question="This is question three four"), ))
         reply = json.loads(response2.data)
-        self.assertEquals(reply["message"], "Question already exists, check it out for the answer")
-        self.assertEquals(response.status_code, 201)
+        self.assertEqual(reply["message"], "Question already exists, check it out for the answer")
+        self.assertEqual(response.status_code, 201)

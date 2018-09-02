@@ -19,8 +19,8 @@ class TestViewingQuestions(unittest.TestCase):
                                  content_type='application/json',
                                  data=reply)
         reply2 = json.loads(response2.data.decode())
-        self.assertEquals(reply2["message"], "Successfully viewed questions")
-        self.assertEquals(response2.status_code, 200)
+        self.assertEqual(reply2["message"], "Successfully viewed questions")
+        self.assertEqual(response2.status_code, 200)
 
     def test_get_single_question(self):
         """Test to get a question by its id"""
@@ -35,7 +35,7 @@ class TestViewingQuestions(unittest.TestCase):
                                  content_type='application/json',
                                  data=reply)
         reply2 = json.loads(response2.data.decode())
-        self.assertEquals(response2.status_code, 200)
+        self.assertEqual(response2.status_code, 200)
 
     def test_get_question_with_wrong_id(self):
         """Test to get a single question with wrong id"""
@@ -50,5 +50,5 @@ class TestViewingQuestions(unittest.TestCase):
                                  content_type='application/json',
                                  data=reply)
         reply2 = json.loads(response2.data.decode())
-        self.assertEquals(reply2["message"], "Id should be an integer")
-        self.assertEquals(response2.status_code, 400)
+        self.assertEqual(reply2["message"], "Id should be an integer")
+        self.assertEqual(response2.status_code, 400)

@@ -13,8 +13,8 @@ class TestAnswer(unittest.TestCase):
                                  content_type='application/json',
                                  data=json.dumps(dict(answer="This is my answer 1"), ))
         reply = json.loads(response.data)
-        self.assertEquals(reply["message"], "Answer already exists")
-        self.assertEquals(response.status_code, 409)
+        self.assertEqual(reply["message"], "Answer already exists")
+        self.assertEqual(response.status_code, 409)
 
     def test_empty_answer_post(self):
         """ Test for posting an empty answer post"""
@@ -22,19 +22,19 @@ class TestAnswer(unittest.TestCase):
                                  content_type='application/json',
                                  data=json.dumps(dict(answer="  "), ))
         reply = json.loads(response.data)
-        self.assertEquals(reply["message"], "No input given")
-        self.assertEquals(response.status_code, 400)
+        self.assertEqual(reply["message"], "No input given")
+        self.assertEqual(response.status_code, 400)
         response2 = self.app.post("/api/v1/questions/1/answer",
                                   content_type='application/json',
                                   data=json.dumps(dict(answer="This is"), ))
         reply = json.loads(response2.data)
-        self.assertEquals(reply["message"], "Input has to be at least 10 characters long")
-        self.assertEquals(response2.status_code, 400)
+        self.assertEqual(reply["message"], "Input has to be at least 10 characters long")
+        self.assertEqual(response2.status_code, 400)
 
     def test_wrong_question_id(self):
         response = self.app.post("/api/v1/questions/a/answer",
                                  content_type='application/json',
                                  data=json.dumps(dict(answer="This is my answer 1"), ))
         reply = json.loads(response.data)
-        self.assertEquals(reply["message"], "Id should be an integer")
-        self.assertEquals(response.status_code, 400)
+        self.assertEqual(reply["message"], "Id should be an integer")
+        self.assertEqual(response.status_code, 400)

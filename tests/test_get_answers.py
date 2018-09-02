@@ -21,5 +21,5 @@ class TestGetAnswer(unittest.TestCase):
                                  content_type='application/json',
                                  data=reply)
         reply2 = json.loads(response3.data.decode())
-        self.assertEquals(reply2["message"], "Successfully viewed Answers")
-        self.assertEquals(response3.status_code, 200)
+        self.assertEqual(reply2["message"], "Successfully viewed Answers")
+        self.assertEqual(response3.status_code, 200)

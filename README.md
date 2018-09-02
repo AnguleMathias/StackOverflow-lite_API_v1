@@ -2,6 +2,7 @@
 StackOverflow-lite is a platform where people can ask questions and provide answers.
 
 ## Badges
+[![Build Status](https://travis-ci.org/AnguleMathias/StackOverflow-lite_API_v1.svg?branch=develop)](https://travis-ci.org/AnguleMathias/StackOverflow-lite_API_v1)
 
 
 ## Features

@@ -2,9 +2,10 @@
 StackOverflow-lite is a platform where people can ask questions and provide answers.
 
 ## Badges
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d252874b76f4034ac72d0b8eff7bb51)](https://app.codacy.com/app/AnguleMathias/StackOverflow-lite_API_v1?utm_source=github.com&utm_medium=referral&utm_content=AnguleMathias/StackOverflow-lite_API_v1&utm_campaign=Badge_Grade_Dashboard)
+
 [![Build Status](https://travis-ci.org/AnguleMathias/StackOverflow-lite_API_v1.svg?branch=develop)](https://travis-ci.org/AnguleMathias/StackOverflow-lite_API_v1)
 [![Coverage Status](https://coveralls.io/repos/github/AnguleMathias/StackOverflow-lite_API_v1/badge.svg?branch=develop)](https://coveralls.io/github/AnguleMathias/StackOverflow-lite_API_v1?branch=develop)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d252874b76f4034ac72d0b8eff7bb51)](https://app.codacy.com/app/AnguleMathias/StackOverflow-lite_API_v1?utm_source=github.com&utm_medium=referral&utm_content=AnguleMathias/StackOverflow-lite_API_v1&utm_campaign=Badge_Grade_Dashboard)
 
 ## Features
 
@@ -17,10 +18,10 @@ StackOverflow-lite is a platform where people can ask questions and provide answ
 
 HTTP Method|Endpoint|Functionality
 -----------|--------|-------------
-POST|api/v1/questions|Add a question
-GET|api/v1/questions/questionId|Fetch a specific question
-GET|api/v1/questions|Fetch all questions
-POST|api/v1/questions/<question_id>/answers|Add an answer to a specific question
+POST|/api/v1/questions|Add a question
+GET|/api/v1/questions/questionId|Fetch a specific question
+GET|/api/v1/questions|Fetch all questions
+POST|/api/v1/questions/<question_id>/answers|Add an answer to a specific question
 
 ## Deployment
 

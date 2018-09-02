@@ -10,5 +10,4 @@ script:
   - python3 -m unittest
   - pytest --cov=app
 
-after_success:
-  - coveralls
+after_success: coveralls

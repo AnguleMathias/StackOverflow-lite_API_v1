@@ -2,6 +2,7 @@
 StackOverflow-lite is a platform where people can ask questions and provide answers.
 
 ## Badges
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d252874b76f4034ac72d0b8eff7bb51)](https://app.codacy.com/app/AnguleMathias/StackOverflow-lite_API_v1?utm_source=github.com&utm_medium=referral&utm_content=AnguleMathias/StackOverflow-lite_API_v1&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/AnguleMathias/StackOverflow-lite_API_v1.svg?branch=develop)](https://travis-ci.org/AnguleMathias/StackOverflow-lite_API_v1)
 [![Coverage Status](https://coveralls.io/repos/github/AnguleMathias/StackOverflow-lite_API_v1/badge.svg?branch=develop)](https://coveralls.io/github/AnguleMathias/StackOverflow-lite_API_v1?branch=develop)
 

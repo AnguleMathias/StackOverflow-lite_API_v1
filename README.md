@@ -20,6 +20,10 @@ GET|api/v1/questions/questionId|Fetch a specific question
 GET|api/v1/questions|Fetch all questions
 POST|api/v1/questions/<question_id>/answers|Add an answer to a specific question
 
+## Deployment
+
+Click to access [hosted app](https://stackoverflow-lite-mathias.herokuapp.com)
+
 ## Tools Used
 
 * [Flask](http://flask.pocoo.org/) - Framework for Python
@@ -72,6 +76,3 @@ POST|api/v1/questions/<question_id>/answers|Add an answer to a specific question
 * Run the tests.
 
             `pytest`
-
-## Deployment
-

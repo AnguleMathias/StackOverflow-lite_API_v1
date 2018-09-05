@@ -7,6 +7,7 @@ StackOverflow-lite is a platform where people can ask questions and provide answ
 [![Coverage Status](https://coveralls.io/repos/github/AnguleMathias/StackOverflow-lite_API_v1/badge.svg?branch=develop)](https://coveralls.io/github/AnguleMathias/StackOverflow-lite_API_v1?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9a5fcbd2a03a937ee335/maintainability)](https://codeclimate.com/github/AnguleMathias/StackOverflow-lite_API_v1/maintainability)
 
+
 ## Features
 
 * Post a question

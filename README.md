@@ -26,7 +26,7 @@ POST|/api/v1/questions/<question_id>/answers|Add an answer to a specific questio
 
 ## Deployment
 
-Click to access [hosted app](https://stackoverflow-lite-mathias.herokuapp.com)
+Click to access [hosted app](https://stackoverflow-lite-mathias.herokuapp.com/api/v1/questions)
 
 ## Tools Used
 

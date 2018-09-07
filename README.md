@@ -20,9 +20,10 @@ StackOverflow-lite is a platform where people can ask questions and provide answ
 HTTP Method|Endpoint|Functionality
 -----------|--------|-------------
 POST|/api/v1/questions|Add a question
-GET|/api/v1/questions/questionId|Fetch a specific question
+GET|/api/v1/questions/<question_id>|Fetch a specific question
 GET|/api/v1/questions|Fetch all questions
-POST|/api/v1/questions/<question_id>/answers|Add an answer to a specific question
+POST|/api/v1/questions/<question_id>/answer|Add an answer to a specific question
+GET|/api/v1/answers|Fetch all questions with the answers
 
 ## Deployment
 

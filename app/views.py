@@ -19,6 +19,8 @@ def post_question():
     if validation:
         return validation
     valid = validate.validate_type(question)
+    if "question" not in question:
+        return jsonify({"message": "Invalid question key entered, please try again"}), 400
     if valid:
         return jsonify({"message": "Invalid question entered, please try again"}), 400
     if any(d["question"] == question for d in all_questions):

@@ -20,7 +20,7 @@ def post_question():
         return validation
     valid = validate.validate_type(question)
     if "question" not in question:
-        return jsonify({"message": "Invalid question key entered, please try again"}), 400
+        return jsonify({"message": "Invalid question key has been entered, please try again"}), 400
     if valid:
         return jsonify({"message": "Invalid question entered, please try again"}), 400
     if any(d["question"] == question for d in all_questions):
@@ -81,6 +81,8 @@ def post_answer(question_id):
     if validation2:
         return validation2
 
+    if "answer" not in answer:
+        return jsonify({"message": "Invalid answer key entered, please try again"}), 400
     if any(dy["answer"] == ans for dy in all_answers):
         if any(xy["question_id"] == _id for xy in all_answers):
             return jsonify({"message": "Answer already exists"}), 409
